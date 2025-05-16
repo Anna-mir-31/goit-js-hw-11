@@ -7,12 +7,126 @@
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+/* ======= Base ======= */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+  color: #2e2f42;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1280px;
+  padding: 40px 24px;
+  margin: 0 auto;
+}
+
+/* ======= Form ======= */
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.form input[type='text'] {
+  width: 300px;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 16px;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form input[type='text']:hover {
+  border: 1px solid #000000;
+}
+
+/* Focused (pressed) */
+.form input[type='text']:focus {
+  border: 1px solid #4e75ff;
+}
+.form button {
+  height: 40px;
+  padding: 0 16px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #4e75ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #6c8cff;
+}
+
+/* ======= Loader ======= */
+.loader {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 32px;
+  border: 5px solid #d3d3d3;
+  border-top-color: #4e75ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.is-hidden {
+  display: none;
+}
+
+/* ======= Gallery ======= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding: 4px 20px;
+  font-size: 14px;
+}
+
+.info-item {
+  text-align: center;
+}
